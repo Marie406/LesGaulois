@@ -53,6 +53,27 @@ public class Gaulois {
 		}
 	}
 	
+	private int getNbTrophees() {
+		return this.nbTrophees;
+	}
+	
+	private void setNbTrophees(int nbTrophees) {
+		this.nbTrophees = nbTrophees;
+	}
+	
+	// j'ai pas encore testé la fonction
+	public void faireUneDonation(Musee musee) {
+		if (this.getNbTrophees()>0) {
+			this.parler("Je donne au musée tous mes trophées :");
+		}
+		for(int i=0; i<this.getNbTrophees(); i++) {
+			Equipement equipement = trophees[i];
+			musee.donnerTrophees(this, equipement);
+			System.out.println("- " + equipement.toString());
+		}
+		this.setNbTrophees(0);
+	}
+	
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		//System.out.println(asterix.getNom());
@@ -69,5 +90,7 @@ public class Gaulois {
 		int forcePotion = panoramix.getForcePotion();
 		asterix.boirePotion(forcePotion);
 		asterix.frapper(vercingetorix);
+		
+		
 	}
 }
