@@ -80,14 +80,16 @@ public class Romain {
 		// equipementEjecte = ejecterEquipement();
 		// parler("J'abandonne...");
 		// }
-		if (force <= 0) 
-			parler("J'abandonne...");
-		else {
+		if (force <= 0) {
 			equipementEjecte = ejecterEquipement();
+			parler("J'abandonne...");
+		}
+		else {
+			//equipementEjecte = ejecterEquipement();
 			parler("Aïe");
 		}
 			// post condition la force a diminuée
-		assert force < oldForce;
+		assert force <= oldForce;
 		return equipementEjecte;
 	}
 
@@ -99,8 +101,8 @@ public class Romain {
 			for (int i = 0; i < nbEquipement; i++) {
 				if ((equipements[i] != null && equipements[i].equals(Equipement.BOUCLIER))) {
 					resistanceEquipement += 8;
-				} else {
-					System.out.println("Equipement casque");
+				} if ((equipements[i] != null && equipements[i].equals(Equipement.CASQUE))){
+					//System.out.println("Equipement casque");
 					resistanceEquipement += 5;
 				}
 		}

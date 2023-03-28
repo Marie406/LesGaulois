@@ -1,18 +1,13 @@
 package personnages;
 
-import personnages.Gaulois;
-import personnages.Equipement;
 
 // Potentiellement pas finie
 public class Trophee {
 	private Gaulois gaulois;
 	private Equipement equipement;
 	
-	public void setGaulois(Gaulois gaulois) {
+	public Trophee(Gaulois gaulois, Equipement equipement) {
 		this.gaulois = gaulois;
-	}
-	
-	public void setEquipement(Equipement equipement) {
 		this.equipement = equipement;
 	}
 	
@@ -20,8 +15,8 @@ public class Trophee {
 		return this.equipement;
 	}
 	
-	
-	private String donnerNom(Gaulois gaulois) {
-		return gaulois.getNom();
+	public Gaulois getGaulois() {
+		return this.gaulois;
 	}
+	
 }

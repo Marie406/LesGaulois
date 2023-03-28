@@ -6,6 +6,7 @@ public class Gaulois {
 	private int effetPotion = 1;
 	private int nbTrophees;
 	private Equipement [] trophees = new Equipement[100];
+	private Musee musee;
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -31,8 +32,8 @@ public class Gaulois {
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
 		Equipement [] tropheesGaulois = romain.recevoirCoup((force / 3) * effetPotion);
-		for (int i = 0; tropheesGaulois != null && i < tropheesGaulois.length; i++, nbTrophees++) {
-			this.trophees[nbTrophees] = tropheesGaulois[i];
+		for (int i = 0; tropheesGaulois != null && i < tropheesGaulois.length; i++, this.nbTrophees++) {
+			this.trophees[this.nbTrophees] = tropheesGaulois[i];
 		}
 	}
 	
@@ -90,6 +91,7 @@ public class Gaulois {
 		int forcePotion = panoramix.getForcePotion();
 		asterix.boirePotion(forcePotion);
 		asterix.frapper(vercingetorix);
+		asterix.faireUneDonation(asterix.musee);
 		
 		
 	}

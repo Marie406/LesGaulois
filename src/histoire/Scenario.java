@@ -32,7 +32,7 @@ import personnages.Druide;
 import personnages.Equipement;
 import personnages.Gaulois;
 import personnages.Romain;
-//import villagegaulois.Musee;
+import personnages.Musee;
 
 public class Scenario {
 
@@ -64,9 +64,10 @@ public class Scenario {
 		
 //		Partie a decommenter
 		
-//		Musee musee = new Musee();
-//		asterix.faireUneDonnation(musee);
-
+		Musee musee = new Musee();
+		asterix.faireUneDonation(musee);
+		
+		System.out.println(musee.extraireInstructionsCaml());
 	}
 
 }
