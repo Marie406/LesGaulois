@@ -37,8 +37,6 @@ import personnages.Musee;
 public class Scenario {
 
 	public static void main(String[] args) {
-		Equipement.CASQUE.setNom("casque");
-		Equipement.BOUCLIER.setNom("bouclier");
 		Druide druide = new Druide("Panoramix", 5, 10);
 		druide.parler("Je vais aller préparer une petite potion...");
 		druide.preparerPotion();
